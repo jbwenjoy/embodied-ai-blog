@@ -18,7 +18,7 @@ force，image，delta pose 都要输入，主干用resnet，三个输出头，�
 
 成功的插入依赖于插头与插座之间的相对位姿，而非精确的绝对位置。也是示教一次找到正确位姿，训练VA模型。用Diffusion预测delta pose。
 
-![EasyInsert Framework](../_pages/assetsmethod_final_mac.jpg)
+![EasyInsert Framework](../_pages/assets/method_final_mac.jpg)
 
 
 
@@ -26,7 +26,7 @@ force，image，delta pose 都要输入，主干用resnet，三个输出头，�
 
 在策略无法零样本泛化时，只要奖励函数能泛化，就可以让机器人自我评估、自我优化，从而在线微调完成新任务。
 
-![Refer to caption](../_pages/assetsx1-8689790.png)
+![Refer to caption](../_pages/assets/x1-8689790.png)
 
 
 
@@ -36,7 +36,7 @@ force，image，delta pose 都要输入，主干用resnet，三个输出头，�
 
 直接用元策略在新任务上做 online RL 微调很慢，反而是加入示范再进行 fine-tune，会显著提高 sample efficiency 和初始 performance。示范的Enc能提取插入任务中的关键信息，从而让Actor和Critic都更聪明。**demo context**：由若干人类demo轨迹组成，每条轨迹包含sars'。
 
-![Refer to caption](../_pages/assetsalgo_diag.png)
+![Refer to caption](../_pages/assets/algo_diag.png)
 
 
 
@@ -64,7 +64,7 @@ Too many manual processes.
 
 数据增强策略。**1. 拼接轨迹（STG）**把不同演示片段之间用“合理的中间状态”连起来，比如：只有“运球片段”和“投篮片段”，STG 会构造可能的“运完球直接投篮”的轨迹。**2. 状态邻域扩展（STF）**对每个演示状态，找出它周围（ε-邻域）的一系列可能起始状态；并构建“指向原演示”的过渡路径，即“这附近的状态怎么进到已知轨迹里”。
 
-![Refer to caption](../_pages/assetsx3-1194862.png)
+![Refer to caption](../_pages/assets/x3-1194862.png)
 
 这两篇本质上都是图形学研究，纯仿真。
 
@@ -180,7 +180,7 @@ action就是这里花哨的地方。如果你在视频中直接提取SE3，那�
 
 想要实现看图控制机器人。**从“机器人动作参数” → 渲染出一张图像的过程**，还必须是“可微分”的，才能做优化：让机器人动一下 → 渲染出图像 → CLIP 判断这个图像好不好 → 根据 CLIP 的反馈再调动作 → 再渲染 → 再反馈…… 直到机器人动作“看起来对”。于是需要前向的“从关节角度到图像”的渲染过程。
 
-![method](../_pages/assetsmethod.jpg)
+![method](../_pages/assets/method.jpg)
 
 
 

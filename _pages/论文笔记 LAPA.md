@@ -87,7 +87,7 @@ permalink: /lapa/
 
 
 
-![Refer to caption](../_pages/assetsx2-20250407223623368.png)
+![Refer to caption](../_pages/assets/x2-20250407223623368.png)
 
 ## **🎯 总体结构：三部分、两个阶段**
 

@@ -82,7 +82,7 @@ permalink: /cot-vla/
 
 ## **📊 CoT-VLA 模型结构**
 
-![Refer to caption](../_pages/assetsx1.png)
+![Refer to caption](../_pages/assets/x1.png)
 
 这张图展示了整个流程分为两个阶段：
 
@@ -130,7 +130,7 @@ permalink: /cot-vla/
 
 
 
-![Refer to caption](../_pages/assetsx2.png)
+![Refer to caption](../_pages/assets/x2.png)
 
 
 
@@ -205,7 +205,7 @@ permalink: /cot-vla/
 
 如果是使用视频数据（哪怕没有动作标签），也可以学到合理的子目标序列。
 
-![Refer to caption](../_pages/assetsx3.png)
+![Refer to caption](../_pages/assets/x3.png)
 
 
 
@@ -281,4 +281,4 @@ $\mathcal{L}_{\text{BC}} = \sum_t \| \hat{a}_t - a_t \|^2$
 
 ## 效果
 
-![Refer to caption](../_pages/assetsx4.png)
+![Refer to caption](../_pages/assets/x4.png)

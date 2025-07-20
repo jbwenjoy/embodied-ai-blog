@@ -465,12 +465,12 @@ z = [0.2, 0.3, 0.1, -0.1]
 
 
 
-![transfusion_2024-09-04_](../_pages/assets06202828102e960b817749002511f009.png)
+![transfusion_2024-09-04_](../_pages/assets/06202828102e960b817749002511f009.png)
 
 
 
-![transfusion_2024-09-04_](../_pages/assets98d230d4e3d67b104ebc0e24724b263d.png)
+![transfusion_2024-09-04_](../_pages/assets/98d230d4e3d67b104ebc0e24724b263d.png)
 
 
 
-![transfusion_2024-09-04_](../_pages/assetsf3c8f445c0d5796466a27f147b67671e.png)
+![transfusion_2024-04_](../_pages/assets/f3c8f445c0d5796466a27f147b67671e.png)
