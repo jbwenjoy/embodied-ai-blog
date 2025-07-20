@@ -1,52 +1,63 @@
 header:
-  - titles:
-      # @start locale config
-      en      : &EN       Archive
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  归档
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  歸檔
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       아카이브
-      ko-KR   : *KO
-      fr      : &FR       Archives
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
-      tr      : &TR       Arşivdekiler
-      # @end locale config
-    url: /archive.html
+  - title:      Home
+    url:        /
+  - title:      Blogs
+    url:        /start/
+    key:        blogs
 
-  - titles:
-      # @start locale config
-      en      : &EN       About
-      en-GB   : *EN
-      en-US   : *EN
-      en-CA   : *EN
-      en-AU   : *EN
-      zh-Hans : &ZH_HANS  关于
-      zh      : *ZH_HANS
-      zh-CN   : *ZH_HANS
-      zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  關於
-      zh-TW   : *ZH_HANT
-      zh-HK   : *ZH_HANT
-      ko      : &KO       소개
-      ko-KR   : *KO
-      fr      : &FR       À propos
-      fr-BE   : *FR
-      fr-CA   : *FR
-      fr-CH   : *FR
-      fr-FR   : *FR
-      fr-LU   : *FR
-      tr      : &TR       Hakkında
-      # @end locale config
-    url: /about.html
+pages:
+  - title:      开始
+    children:
+      - title:  介绍
+        url:    /start/
+      # - title:  如何使用
+        # url:    /start/#how-to-use
+      # - title:  更新日志
+        # url:    /start/#changelog
+
+  - title:      基础知识
+    children:
+      - title:  VAE
+        url:    /vae/
+      - title:  VQ-VAE
+        url:    /vq-vae/
+      - title:  DiT
+        url:    /dit/
+      - title:  Diffusion Models
+        url:    /diffusion/
+      - title:  DDIM
+        url:    /ddim/
+      - title:  Flow Matching
+        url:    /flow-matching/
+      - title:  IRL
+        url:    /irl/
+      - title:  DPO
+        url:    /dpo/
+      - title:  LeRobot
+        url:    /lerobot/
+
+  - title:      数据集
+    children:
+      - title:    summary
+        url:      /datasets/
+
+  - title:      论文笔记
+    children:
+      - title:  CoT-VLA
+        url:    /cot-vla/
+      - title:  LAPA
+        url:    /lapa/
+      - title:  Transfusion
+        url:    /transfusion/
+      - title:  TDMPC
+        url:    /tdmpc/
+      - title:  RDP
+        url:    /rdp/
+      - title:  Unified Video Action Model
+        url:    /unified-video-action-model/
+
+
+  - title:      一句话论文
+    children:
+      - title:    summary
+        url:      /one-sentence-paper/
