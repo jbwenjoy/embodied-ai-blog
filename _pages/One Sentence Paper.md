@@ -30,15 +30,11 @@ force，image，delta pose 都要输入，主干用resnet，三个输出头，�
 
 
 
-
-
 ## Offline Meta-Reinforcement Learning with Demonstration Adaptation
 
 直接用元策略在新任务上做 online RL 微调很慢，反而是加入示范再进行 fine-tune，会显著提高 sample efficiency 和初始 performance。示范的Enc能提取插入任务中的关键信息，从而让Actor和Critic都更聪明。**demo context**：由若干人类demo轨迹组成，每条轨迹包含sars'。
 
 ![Refer to caption](../_pages/assets/algo_diag.png)
-
-
 
 
 
@@ -52,8 +48,6 @@ force，image，delta pose 都要输入，主干用resnet，三个输出头，�
 
 用一条人工演示，合成大量数据。把演示轨迹分解为“自由空间移动段”和“接触操作段”，自由段通过运动规划重新生成；接触段整体变换。把输入视觉分割出物体和背景，然后拼接成新的位置。
 
-Too many manual processes. 
-
 
 
 ## **SkillMimic: Learning Basketball Interaction Skills from Demonstrations**
@@ -66,7 +60,9 @@ Too many manual processes.
 
 ![Refer to caption](../_pages/assets/x3-1194862.png)
 
-这两篇本质上都是图形学研究，纯仿真。
+这两篇都是图形学研究，纯仿真。
+
+
 
 # 动作生成和预测
 
@@ -74,13 +70,11 @@ Too many manual processes.
 
 从一个**不完整的第一人称视频 + 一点文字提示 + 起始手部姿态**中，**推理出一整段完整的 3D 手部运动轨迹**。VLM+深度图作为大脑，**DiT-based Flow-Matching Policy Network**+**Temporal Orthogonal Filtering**作为小脑。方法可以在robo领域参考。
 
+
+
 ## Human Motion Prediction under Unexpected Perturbation
 
-专注于由非预期外部力（如推力）引起的反应性运动，这类思想在VLA上应该能用上。
-
-
-
-## 3D Human Motion Prediction : A Survey 大综述
+专注于由非预期外部力（如推力）引起的反应性运动，这类思想在VLA上可能能用上。
 
 
 
@@ -108,7 +102,7 @@ Too many manual processes.
 
 
 
-## Learning Trajectory Dependencies for Human Motion Prediction
+## LTD: Learning Trajectory Dependencies for Human Motion Prediction
 
 **DCT建模时间依赖（Temporal Modeling）**
 
@@ -122,7 +116,7 @@ Too many manual processes.
 - **传统方式**：使用人体运动的运动学树（Kinematic Tree）或者手动定义卷积核大小。
 - **本方法**：将人体姿态建模为**完全连接图（fully-connected graph）**，并**学习邻接矩阵A**（Graph结构是可学习的），更灵活地捕捉远距离的关节依赖，如左右对称性、上肢-下肢协调等。
 
-这篇就是LTD，可以作为基础尝试
+
 
 ## CacheFlow: Fast Human Motion Prediction by Cached Normalizing Flow
 
@@ -130,21 +124,31 @@ Too many manual processes.
 
 CacheFlow 的“很快”是相对于其他 stochastic 方法（VAE, Diffusion, Flow），而不是相对于 LSTM。如果只要预测一个动作，当然可以用 LSTM 这种 deterministic 方法，但它无法表示“未来的不确定性”——这正是 CacheFlow 和其他概率模型的目标所在。
 
+
+
 ## Existence Is Chaos: Enhancing 3D Human Motion Prediction with Uncertainty Consideration
 
 都是在Human3.6M、3DPW、CMU Mocap这几个数据集上跑的。**引入“未来不是唯一答案”的观点**，强调不确定性在运动预测中的重要性。关注点在生成的运动**更稳定、自然、少抖动**。
+
+
 
 ## LAL: Enhancing 3D Human Motion Prediction with Latency-aware Auxiliary Learning
 
 现有方法假设机器人能**“即时反应”**，即预测完成后立即执行；但在现实中，从感知 → 预测 → 决策 → 执行动作，系统会有**不可避免的反应延迟（latency）**（如几十到几百毫秒）；这使得预测的**初始部分**已经“过时”，变得**对控制无意义**。延迟区间虽然不可用于实际控制，但它包含了有价值的运动信息，可以作为“辅助学习任务”，来提升有效预测部分的准确率。
 
-setting和我们的场景比较像，能抗很高的延迟，结果和其他比差距不大。和上一篇都用LTD、SPGSN、PGBIG、DMGNN当benchmark。
+能抗很高的延迟，结果和其他比差距不大。和上一篇都用LTD、SPGSN、PGBIG、DMGNN当benchmark。
+
+
 
 ## Head and Body Motion Prediction to Enable Mobile VR Experiences with Low Latency
+
+
 
 ## Motion Prediction and Pre-Rendering at the Edge to Enable Ultra-Low Latency Mobile 6DoF Experiences
 
 用MLP预测头部3dof，LSTM预测手部6dof。推理频率能到90hz，差距不太大就用预测的，差距太大就回滚到旧数据。
+
+
 
 ## Adaptive Human Motion Prediction using Multiple Model Approaches
 
@@ -181,8 +185,6 @@ action就是这里花哨的地方。如果你在视频中直接提取SE3，那�
 想要实现看图控制机器人。**从“机器人动作参数” → 渲染出一张图像的过程**，还必须是“可微分”的，才能做优化：让机器人动一下 → 渲染出图像 → CLIP 判断这个图像好不好 → 根据 CLIP 的反馈再调动作 → 再渲染 → 再反馈…… 直到机器人动作“看起来对”。于是需要前向的“从关节角度到图像”的渲染过程。
 
 ![method](../_pages/assets/method.jpg)
-
-
 
 
 

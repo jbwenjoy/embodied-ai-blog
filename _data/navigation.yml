@@ -38,26 +38,40 @@ pages:
 
   - title:      数据集
     children:
-      - title:    summary
+      - title:    Summary
         url:      /datasets/
 
   - title:      论文笔记
     children:
+      - title:  ACT
+        url:    /act/
       - title:  CoT-VLA
         url:    /cot-vla/
+      - title:  DP
+        url:    /dp/
+      - title:  DP3
+        url:    /dp3/
+      - title:  iDP3
+        url:    /idp3/
       - title:  LAPA
         url:    /lapa/
-      - title:  Transfusion
-        url:    /transfusion/
-      - title:  TDMPC
-        url:    /tdmpc/
+      - title:  OpenVLA
+        url:    /openvla/
       - title:  RDP
         url:    /rdp/
+      - title:  RDT
+        url:    /rdt/
+      - title:  TDMPC
+        url:    /tdmpc/
+      - title:  Transfusion
+        url:    /transfusion/
+      - title:  UMI
+        url:    /umi/
       - title:  Unified Video Action Model
         url:    /unified-video-action-model/
 
 
   - title:      一句话论文
     children:
-      - title:    summary
+      - title:    Summary
         url:      /one-sentence-paper/
