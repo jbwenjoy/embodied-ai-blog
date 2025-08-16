@@ -88,10 +88,10 @@ mathjax: true # false (default), true
 mathjax_autoNumber: true # false (default), true
 
 ## Mermaid
-mermaid: # false (default), true
+mermaid: true # false (default), true
 
 ## Chart
-chart: # false (default), true
+chart: true # false (default), true
 
 
 ## => Paginate
@@ -102,7 +102,7 @@ paginate_path: /page:num # don't change this unless for special need
 
 ## => Sources
 ##############################
-sources: # bootcdn (default), unpkg
+sources: unpkg # bootcdn (default), unpkg
 
 
 ## => Sharing
@@ -118,7 +118,7 @@ sharing:
 ## => Comments
 ##############################
 comments:
-  provider: false # false (default), "disqus", "gitalk", "valine", "custom"
+  provider: gitalk # false (default), "disqus", "gitalk", "valine", "custom"
 
   ## Disqus
   disqus:
@@ -127,12 +127,13 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : # GitHub Application Client ID
-    clientSecret: # GitHub Application Client Secret
-    repository  : # GitHub repo
-    owner       : # GitHub repo owner
+    clientID    : Ov23liycntvIwreNOnoS # GitHub Application Client ID
+    clientSecret: 957bb0d3fce998013957b44bd4952b6cc1c248f7 # GitHub Application Client Secret
+    repository  : embodied-ai-blog # GitHub repo
+    owner       : Hao-Starrr # GitHub repo owner
     admin: # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-      # - your GitHub Id
+      - Hao-Starrr # your GitHub Id
+    proxy       : "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
